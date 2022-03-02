@@ -3,6 +3,9 @@ import time
 from threading import *
 
 url = "https://api.vk.com/method/wall.get"
+names = ['blooossom', 'purplecherrybot']
+offsets = [1, 1]
+count = 2
 
 
 def post(post_text):
@@ -50,11 +53,7 @@ def post_photo(post_text, photo_id):
     response = requests.request("POST", url, headers=headers, params=payload)
 
 
-def post_check():
-    name = 'purplecherrybot'
-    offset = 0
-    count = 1
-
+def post_check(name, offset, count):
     payload = f'domain={name}&offset={offset}&count={count}&extended=false&access_token=0b97751f0b97751f0b97751f920bec1a5500b970b97751f698deca772c621f6c27724c3&v=5.131'
     headers = {
         'authority': 'api.vk.com',
@@ -104,4 +103,9 @@ def post_check():
         time.sleep(3)
 
 
-post_check()
+t = []
+
+for i in range(len(names)):
+    t.append(Thread(target=post_check, args=(
+        names[i], offsets[i], count,)))
+    t[i].start()
