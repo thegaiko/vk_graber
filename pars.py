@@ -3,7 +3,8 @@ import time
 from threading import *
 
 url = "https://api.vk.com/method/wall.get"
-names = ['blooossom', 'purplecherrybot']
+names = ['pppppp_pppp_p', 'nnrv0', 'public69767901',
+         'thankunext17', 'bonjourlasolitude', 'purplecherrybot']
 offsets = [1, 1]
 count = 2
 
