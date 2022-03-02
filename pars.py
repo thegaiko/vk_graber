@@ -8,7 +8,7 @@ url = "https://api.vk.com/method/wall.get"
 def post(post_text):
     url = "https://api.vk.com/method/wall.post"
 
-    payload = f'owner_id=-89810082&friends_only=0&from_group=0&message={post_text}&signed=0&mark_as_ads=0&close_comments=0&mute_notifications=0&access_token=f731ac8724793016d8e04ae80823babaa2b9e8d4915c921deab5f0b190b48b0a193ec6ab0a1eb200c816b&v=5.131'
+    payload = f'owner_id=-210983267&friends_only=0&from_group=0&message={post_text}&signed=0&mark_as_ads=0&close_comments=0&mute_notifications=0&access_token=f731ac8724793016d8e04ae80823babaa2b9e8d4915c921deab5f0b190b48b0a193ec6ab0a1eb200c816b&v=5.131'
     headers = {
         'authority': 'api.vk.com',
         'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"',
@@ -30,7 +30,7 @@ def post(post_text):
 def post_photo(post_text, photo_id):
     url = "https://api.vk.com/method/wall.post"
 
-    payload = f'owner_id=-89810082&friends_only=0&from_group=0&message={post_text}&attachments={photo_id}&signed=0&mark_as_ads=0&close_comments=0&mute_notifications=0&access_token=f731ac8724793016d8e04ae80823babaa2b9e8d4915c921deab5f0b190b48b0a193ec6ab0a1eb200c816b&v=5.131'
+    payload = f'owner_id=-210983267&friends_only=0&from_group=0&message={post_text}&attachments={photo_id}&signed=0&mark_as_ads=0&close_comments=0&mute_notifications=0&access_token=f731ac8724793016d8e04ae80823babaa2b9e8d4915c921deab5f0b190b48b0a193ec6ab0a1eb200c816b&v=5.131'
     headers = {
         'authority': 'api.vk.com',
         'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"',
@@ -51,9 +51,9 @@ def post_photo(post_text, photo_id):
 
 
 def post_check():
-    name = 'purplecherrybot'
-    offset = 0
-    count = 1
+    name = 'nnrv0'
+    offset = 1
+    count = 2
 
     payload = f'domain={name}&offset={offset}&count={count}&extended=false&access_token=0b97751f0b97751f0b97751f920bec1a5500b970b97751f698deca772c621f6c27724c3&v=5.131'
     headers = {
