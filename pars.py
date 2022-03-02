@@ -4,8 +4,8 @@ from threading import *
 
 url = "https://api.vk.com/method/wall.get"
 names = ['pppppp_pppp_p', 'nnrv0', 'public69767901',
-         'thankunext17', 'bonjourlasolitude', 'purplecherrybot']
-offsets = [1, 1]
+         'thankunext17', 'bonjourlasolitude', 'blooossom']
+offsets = [1, 1, 1, 1, 1, 1]
 count = 2
 
 
@@ -74,13 +74,13 @@ def post_check(name, offset, count):
 
     response = requests.request("POST", url, headers=headers, params=payload)
 
-    text0 = response.json()['response']['items'][0]['text']
+    date0 = response.json()['response']['items'][0]['date']
     while True:
         response = requests.request(
             "POST", url, headers=headers, params=payload)
-
+        date = response.json()['response']['items'][0]['date']
         text = response.json()['response']['items'][0]['text']
-        if text != text0:
+        if date0 != date:
             try:
                 response.json()[
                     'response']['items'][0]['attachments'][0]['photo']['sizes'][0]['url']
@@ -99,8 +99,8 @@ def post_check(name, offset, count):
                              [0]['attachments'][i]['photo']['id'])
                     photo_id += 'photo' + owner_id + '_' + id + ','
                 post_photo(post_text, photo_id)
-        text0 = text
-        print(text0)
+        date0 = date
+        print(text)
         time.sleep(3)
 
 
