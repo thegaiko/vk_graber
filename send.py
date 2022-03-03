@@ -1,4 +1,5 @@
 import requests
+import time
 
 
 def post_check(name, offset, count):
@@ -21,7 +22,7 @@ def post_check(name, offset, count):
     }
 
     response = requests.request("POST", url, headers=headers, params=payload)
-    post_id = response.json()['response']['items'][0]['id']
+    post_id = response.json()['response']['items'][0]['date']
     text = response.json()['response']['items'][0]['text']
     try:
         response.json()[
