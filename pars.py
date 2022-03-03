@@ -5,10 +5,10 @@ from posting import post, post_photo
 from send import post_check
 
 
-names = ['pppppp_pppp_p', 'nnrv0',
+names = ['thynk', 'whrmedia', 'yourwoorlld', 'theoh', 'kim_kardashian', 'pppppp_pppp_p', 'nnrv0',
          'thankunext17', '01caramelka', 'g_laurent']
-offsets = [1, 1, 1, 0, 1]
-counts = [2, 2, 2, 1, 2]
+offsets = [0, 0, 1, 1, 1, 1, 1, 1, 1, 1]
+counts = [1, 1, 2, 2, 2, 2, 2, 2, 2, 2]
 old_id = []
 
 
