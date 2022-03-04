@@ -24,12 +24,16 @@ def post_check(name, offset, count):
     response = requests.request("POST", url, headers=headers, params=payload)
     post_id = response.json()['response']['items'][0]['date']
     text = response.json()['response']['items'][0]['text']
+    post_owner_id = post_owner_id = str(response.json()[
+        'response']['items'][0]['owner_id'])
+    copyright_post_id = str(response.json()[
+        'response']['items'][0]['id'])
     try:
         response.json()[
             'response']['items'][0]['attachments'][0]['photo']['sizes'][0]['url']
     except KeyError:
         post_text = text
-        return(post_id, post_text)
+        return(post_id, post_text, post_owner_id, copyright_post_id)
     else:
         post_text = text
         photo_count = len(
@@ -41,4 +45,4 @@ def post_check(name, offset, count):
             id = str(response.json()['response']['items']
                      [0]['attachments'][i]['photo']['id'])
             photo_id += 'photo' + owner_id + '_' + id + ','
-        return(post_id, post_text, photo_id)
+        return(post_id, post_text, photo_id, post_owner_id, copyright_post_id)

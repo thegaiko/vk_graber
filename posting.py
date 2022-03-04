@@ -3,10 +3,10 @@ import requests
 owner_id = '210983267'
 
 
-def post(post_text):
+def post(post_text, post_copyright):
     url = "https://api.vk.com/method/wall.post"
 
-    payload = f'owner_id=-{owner_id}&friends_only=0&from_group=0&message={post_text}&publish_date=1677761844&signed=0&mark_as_ads=0&close_comments=0&mute_notifications=0&access_token=f731ac8724793016d8e04ae80823babaa2b9e8d4915c921deab5f0b190b48b0a193ec6ab0a1eb200c816b&v=5.131'
+    payload = f'owner_id=-{owner_id}&friends_only=0&from_group=0&message={post_text}&publish_date=1677761844&signed=0&mark_as_ads=0&close_comments=0&mute_notifications=0&access_token=f731ac8724793016d8e04ae80823babaa2b9e8d4915c921deab5f0b190b48b0a193ec6ab0a1eb200c816b&copyright={post_copyright}&v=5.131'
     headers = {
         'authority': 'api.vk.com',
         'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"',
@@ -25,10 +25,10 @@ def post(post_text):
     requests.request("POST", url, headers=headers, params=payload)
 
 
-def post_photo(post_text, photo_id):
+def post_photo(post_text, photo_id, post_copyright):
     url = "https://api.vk.com/method/wall.post"
 
-    payload = f'owner_id=-{owner_id}&friends_only=0&from_group=0&message={post_text}&publish_date=1677761844&attachments={photo_id}&signed=0&mark_as_ads=0&close_comments=0&mute_notifications=0&access_token=f731ac8724793016d8e04ae80823babaa2b9e8d4915c921deab5f0b190b48b0a193ec6ab0a1eb200c816b&v=5.131'
+    payload = f'owner_id=-{owner_id}&friends_only=0&from_group=0&message={post_text}&publish_date=1677761844&attachments={photo_id}&signed=0&mark_as_ads=0&close_comments=0&mute_notifications=0&access_token=f731ac8724793016d8e04ae80823babaa2b9e8d4915c921deab5f0b190b48b0a193ec6ab0a1eb200c816b&copyright={post_copyright}&v=5.131'
     headers = {
         'authority': 'api.vk.com',
         'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"',
