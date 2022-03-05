@@ -28,12 +28,13 @@ def post_check(name, offset, count):
         'response']['items'][0]['owner_id'])
     copyright_post_id = str(response.json()[
         'response']['items'][0]['id'])
+    time = response.json()['response']['items'][0]['date']
     try:
         response.json()[
             'response']['items'][0]['attachments'][0]['photo']['sizes'][0]['url']
     except KeyError:
         post_text = text
-        return(post_id, post_text, post_owner_id, copyright_post_id)
+        return(post_id, post_text, post_owner_id, copyright_post_id, time)
     else:
         post_text = text
         photo_count = len(
@@ -45,4 +46,4 @@ def post_check(name, offset, count):
             id = str(response.json()['response']['items']
                      [0]['attachments'][i]['photo']['id'])
             photo_id += 'photo' + owner_id + '_' + id + ','
-        return(post_id, post_text, photo_id, post_owner_id, copyright_post_id)
+        return(post_id, post_text, photo_id, post_owner_id, copyright_post_id, time)
