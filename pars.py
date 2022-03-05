@@ -4,8 +4,8 @@ from send import post_check
 
 names = ['thynk', 'yourwoorlld', 'pppppp_pppp_p', 'nnrv0', 'thankunext17',
          '01caramelka', 'b1ackstreet1', 'club_big_boys', 'tsukuyyyomi', 'purplecherrybot']
-offsets = [0]
-counts = [1]
+offsets = [0, 1, 1, 0, 1, 0, 1, 0, 1, 0]
+counts = [1, 2, 2, 1, 2, 1, 2, 1, 2, 1]
 old_id = []
 my_name = 'gpntrst'
 
