@@ -6,16 +6,15 @@ names = ['thynk', 'yourwoorlld', 'pppppp_pppp_p', 'nnrv0', '01caramelka', 'b1ack
 offsets = [0, 1, 1, 0, 1, 1, 0, 1, 0, 0]
 counts = [1, 2, 2, 1, 2, 2, 1, 2, 1, 1]
 old_id = []
-my_name = 'gpntrst'
 
 for i in range(len(names)):
     old_id.append(str(post_check(names[i], offsets[i], counts[i])[0]))
     time.sleep(1)
 
-timer = 1653714000
+timer = 1653890400
 while True:
     for i in range(len(names)):
-        time.sleep(1)
+        time.sleep(0.1)
         result = post_check(names[i], offsets[i], counts[i])
         id = str(result[0])
         if old_id[i] < id:
